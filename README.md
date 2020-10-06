@@ -1,4 +1,4 @@
-# Open For Contribution
+# Open For Contributions 
 
 Upload anything related to development, programming. 
 
