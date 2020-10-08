@@ -11,3 +11,5 @@ Add name and link to your folder. Example format:
 4. deeksha207 - [CPP programs](https://github.com/deeksha207/hacktoberfest20/tree/master/CPP%20programs)
 
 5. Chauhan98ashish - [Foodie](https://github.com/goel28priyanshu/hacktoberfest20/blob/master/Foodie.zip)
+
+6. garvit-bhardwaj - [Garvit](https://github.com/garvit-bhardwaj/hacktoberfest20/tree/master/Garvit)
