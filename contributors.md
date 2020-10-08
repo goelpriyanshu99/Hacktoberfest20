@@ -4,3 +4,5 @@ Add name and link to your folder. Example format:
 
 #Rishabh186-[CSES Problems](https://github.com/Rishabh186/hacktoberfest20/tree/master/CSES%20Problems)
 #deepak290701-[Matrix exponentiation](https://github.com/Deepak290701/hacktoberfest20/tree/master/Deepak%20Sharma)
+
+#deeksha207 - [CPP programs](https://github.com/deeksha207/hacktoberfest20/tree/master/CPP%20programs)
