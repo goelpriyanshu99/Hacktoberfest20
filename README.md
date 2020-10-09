@@ -52,5 +52,5 @@ Contributing to open-source is easy.
 - Push your work and Create a Pull Request
 
 
-## 🙌🙌You just created your 1st PR🙌🙌
+## 🙌🙌You just created your one PR🙌🙌
 
