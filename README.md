@@ -48,6 +48,7 @@ Contributing to open-source is easy.
   - improving functionality
   - adding new feature
   - improving the documentation
+  - add your contribution to [contributors file](https://github.com/goel28priyanshu/hacktoberfest20/blob/master/contributors.md)
 - Push your work and Create a Pull Request
 
 
