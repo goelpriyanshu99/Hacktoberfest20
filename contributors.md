@@ -14,4 +14,4 @@ Add name and link to your folder. Example format:
 
 6. garvit-bhardwaj - [Garvit](https://github.com/garvit-bhardwaj/hacktoberfest20/tree/master/Garvit)
 
-7. salahu-dev - [Python Programs/guessword & Shell Projects/safepass ](https://github.com/salahu-dev)
+7. salahu-dev - [Python Programs/guessword & Python Programs/passgen-python & Shell Programs/safepass ](https://github.com/salahu-dev)
