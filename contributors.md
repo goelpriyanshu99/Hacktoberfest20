@@ -18,3 +18,5 @@ Add name and link to your folder. Example format:
 
 8. [Abhishek Kumar](https://github.com/abhik99/) - [HelloWorldInDiffLang](https://github.com/abhik99/hacktoberfest20/tree/master/HelloWorldInDiffLang)
 
+9. Himanshu-[Himanshu](https://github.com/freakyLuffy/hacktoberfest20/tree/master/Himanshu)
+
