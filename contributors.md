@@ -13,3 +13,5 @@ Add name and link to your folder. Example format:
 5. Chauhan98ashish - [Foodie](https://github.com/goel28priyanshu/hacktoberfest20/blob/master/Foodie.zip)
 
 6. garvit-bhardwaj - [Garvit](https://github.com/garvit-bhardwaj/hacktoberfest20/tree/master/Garvit)
+
+7. salahu-dev - [Python Programs/guessword & Shell Projects/safepass ](https://github.com/salahu-dev)
