@@ -1,0 +1,29 @@
+You have been using scanf just for inputting. But there's a lot more.
+
+Limiting the digits of the input:
+We can choose how many digits we want to input and discard the rest. 
+scanf("%2d",&n) , This will take max of two digits.
+
+
+Inputting a date:
+Inputting dates with different format is very easy in C!
+Here's how:
+scanf("%d%*c%d*%*c%d",&d,&m,&y)
+This takes dates with format dd/mm/yy , dd-mm-yy or any other separator.
+There are some other ways to do that as well.
+scanf("%d/%d/%d",&d,&m,&y) 
+For this, you need to specify the separator.
+
+Reading until a specific character is encountered:
+scanf("%[^a]",str);
+This would read a string until 'a' is encountered.
+You can give your own characters . It can be more than one as well.
+scanf("%[^abcd]",str)
+reads until any of the character in the square bracket is encountered.
+
+
+Reading strings starting with digits only:
+scanf("%[0-9]",str)
+This would read strings  starting with digits until a non-digit character is encountered.
+Likewise , We can do it for alphabets too. 
+scanf("%[A-Za-z]",str)
