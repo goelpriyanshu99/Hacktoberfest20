@@ -2,7 +2,7 @@ You have been using scanf just for inputting. But there's a lot more.
 
 Limiting the digits of the input:
 We can choose how many digits we want to input and discard the rest. 
-scanf("%2d",&n) ,This will take max of two digits.
+scanf("%2d",&n) , This will take max of two digits.
 
 
 Inputting a date:
