@@ -1,0 +1,67 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define ff first
+#define ss second
+#define pb push_back
+#define endl "\n"
+#define fast ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+ll mod=1e9+7;
+ll dp[2000000];
+ll n;
+ll arr[22][22];
+ll total;
+                ll solve(ll mask)
+                {
+                    ll index=__builtin_popcount(mask)+1;
+                    if(mask==total)  //saare bit set mtlb ek set hm answer ka le liye hai
+                    return 1;
+
+                    if(index>n)
+                    return 0;
+                    ll ans=0;
+                    if(dp[mask]!=-1)
+                    return dp[mask];
+
+                    for(ll i=1;i<=n;i++)
+                    {
+                        ll x=1<<(i-1)&mask;
+                        // cout<<mask<<" "<<index<<endl;
+                        if(x==0 and arr[i][index]==1)
+                        {
+                           
+                            ans+=solve(mask|1<<(i-1));
+                        }
+                    }
+                    return dp[mask]=ans;
+                }
+           
+
+int main() {
+		        fast
+                #ifndef ONLINE_JUDGE
+                freopen("input.txt","r",stdin);
+                freopen("output.txt","w",stdout);
+                #endif
+                
+                ll t;
+                cin>>t;
+                while(t--)
+                {
+                    
+                    cin>>n;
+                    memset(dp,-1,sizeof(dp));
+                    total=(1<<n)-1;
+                    for(ll i=1;i<=n;i++)
+                    {
+                        for(ll j=1;j<=n;j++)
+                        cin>>arr[i][j];
+                    }
+                   
+                    // cout<<total<<endl;
+                    cout<<solve(0)<<endl;
+                }
+
+                
+                return 0;
+}

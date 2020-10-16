@@ -1,0 +1,92 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define ff first
+#define ss second
+#define pb push_back
+#define endl "\n"
+#define fast ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+ll mod=1e9+7;
+vector<ll>arr[102];
+ll dp[1026][102];
+ll people;
+
+				ll solve(ll mask,ll tshirt)
+				{
+				
+					 if(mask==people)
+					 return 1;
+
+					 if(tshirt==101)
+					 return 0;
+
+						if(dp[mask][tshirt]!=-1)
+						return dp[mask][tshirt];
+
+
+					ll ans=0;
+					
+					ans=solve(mask,tshirt+1);
+
+					for(ll it:arr[tshirt])
+					{
+						
+						if(((1<<it) & mask)==0)
+						{
+							ans+=solve(mask|(1<<it),tshirt+1);
+						}
+						ans%=mod;
+					}
+					return dp[mask][tshirt]=ans;
+
+				}
+
+
+	   
+int main() {
+			fast
+			#ifndef ONLINE_JUDGE
+			freopen("input.txt","r",stdin);
+			freopen("output.txt","w",stdout);
+			#endif
+			 
+	     	ll t;
+			cin>>t;
+			while(t--)
+			{
+				 ll n;
+				 cin>>n;
+				 people=(1<<n)-1;
+				string s;
+				getline(cin,s);
+				memset(dp,-1,sizeof(dp));
+				 for(ll i=0;i<n;i++)
+				 {
+					 
+					 getline(cin,s);
+					 s+=" ";
+					 ll temp;
+					 string s2="";
+					 for(ll j=0;j<s.size();j++)
+					 {
+						 if(s[j]==' ')
+						 {
+							 temp=stoi(s2);
+							 s2="";
+							 arr[temp].pb(i);
+							 continue;
+						 }
+
+						 s2+=s[j];
+					 }
+					
+				 }
+			
+				
+				  cout<<solve(0,1)<<endl;
+				  for(ll i=0;i<=100;i++)
+				  arr[i].clear();
+			}
+			 
+			return 0;
+		 }	
