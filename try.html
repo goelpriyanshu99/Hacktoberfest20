@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <title>Document</title>
+    <style>
+
+        .result-main{
+            width: 80vw;
+            height: 60vh;
+            padding-left: 3vw;
+            padding-top: 0.1vh;
+            font-weight: bold;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .result-score-rank{
+            display: flex;
+            width: 40vw;
+            height: 10vh;
+            font-weight:normal;
+            font-size: large;
+        }
+
+        .result-score{
+            width: 9vw;
+        }
+
+        .result-rank{
+            width: auto;
+            height: auto;
+        }
+        .result-col-row{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+
+        .result-cols-3{
+            display: flex;
+            flex-direction: row;
+            width: auto;
+        }
+
+        .cols-1{
+            background-color: #eaf7dc;
+            font-family:'Times New Roman', Times, serif;
+            font-weight: bold;
+            font-size: medium;
+            color: green;
+            border-radius: 6%;
+            padding-top: 2vh;
+            width: 15vw;
+            height: 20vh;
+            padding-bottom: 1vh;
+        }
+
+        .cols-2{
+            background-color: rgb(250, 224, 224);
+            font-family:'Times New Roman', Times, serif;
+            font-weight: bold;
+            font-size: medium;
+            color: red;
+            border-radius: 6%;
+            margin-left: 2vw;
+            padding-top: 2vh;
+            width: 15vw;
+            height: 20vh;
+            padding-bottom: 1vh;
+        }
+
+        .cols-3{
+            background-color: #c1e0f1;
+            font-family:'Times New Roman', Times, serif;
+            font-weight: bold;
+            font-size: medium;
+            color: rgb(62, 114, 192);
+            border-radius: 6%;
+            margin-left: 2vw;
+            padding-top: 2vh;
+            width: 15vw;
+            height: 20vh;
+            padding-bottom: 1vh;
+        }
+        .result-col-4{
+            margin-left: 8vw;
+            font-size: large;
+            font-family:Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: rgba(32, 89, 143, 0.692);
+        }
+        .space{
+            margin-left: 5vw;
+            font-size: large;
+            float: right;
+            color: black;
+        }
+
+        .sign-img{
+            width: 20.px;
+            height: 20px;
+        }
+
+        .result-sol-btn {
+            background-color: #46ac31;
+            color: white;
+            width: 16vw;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 10%;
+            align-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-main">
+        <h1><strong>CAT Free Mock Test Result</strong></h1>
+        <h1><strong>Try harder next time!</strong></h1>
+        <h3><strong>You didn't meet the cut off.&nbsp<select name="cutoff" id="cutoff">
+            <option value="Overall">Overall</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+          </select>&nbspCut off is: 75</strong></h3>
+        <div class="result-score-rank">
+            <div class="result-score">
+                SCORE
+                <br><br>
+                <strong>0</strong>/300
+            </div>
+            <div class="result-rank">
+                RANK
+                <br><br>
+                <strong>0</strong>/300
+            </div>
+        </div>
+        <div class="result-col-row">
+            <div class="result-cols-3">
+                <div class="result-col-1">
+                    <div class="cols-1">
+                        <center><i class="fa fa-check" aria-hidden="true" style="color: green;"></i>
+                        <br>
+                        <h3>CORRECT</h3>
+                        <h3 style="color: black;">0</h3>
+                        <h3 style="color: rgba(0, 0, 0, 0.568);">Ques</h3>
+                        </center>
+                    </div>
+                </div>
+                <div class="result-col-1">
+                    <div class="cols-2">
+                        <center><i class="fa fa-times" aria-hidden="true" style="color: red;"></i>
+                        <br>
+                        <h3>WRONG</h3>
+                        <h3 style="color: black;">0</h3>
+                        <h3 style="color: rgba(0, 0, 0, 0.568);">Ques</h3>
+                        </center>
+                    </div>
+                </div>
+                <div class="result-col-1">
+                    <div class="cols-3">
+                        <center><i class="fa fa-minus" aria-hidden="true" style="color: rgb(62, 114, 192);"></i>
+                        <br>
+                        <h3>SKIPPED</h3>
+                        <h3 style="color: black;">100</h3>
+                        <h3 style="color: rgba(0, 0, 0, 0.568);">Ques</h3>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="result-col-4">
+                <h3><i class="fa fa-percent" aria-hidden="true" style="color: rgb(106, 117, 150);"></i>&nbspPERCENTILE <span class="space">45.00%</span></h3>
+                <h3><img src="https://img.icons8.com/ios/452/accuracy.png" class="sign-img">&nbspACCURACY <span class="space">45.00%</span></h3>
+                <h3><i class="fa fa-clock" aria-hidden="true"></i>&nbspTIME <span class="space">45.00%</span></h3>
+                <br>
+                <center><button type="button" class="result-sol-btn">VIEW SOLUTIONS</button></center>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
