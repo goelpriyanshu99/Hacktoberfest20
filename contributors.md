@@ -20,3 +20,5 @@ Add name and link to your folder. Example format:
 
 9. freakyLuffy-[Himanshu](https://github.com/freakyLuffy/hacktoberfest20/tree/master/Himanshu)
 
+10. Vasu Gupta - [CPP programs](https://github.com/vasu-gupta/hacktoberfest20/tree/master/CPP%20programs)
+
