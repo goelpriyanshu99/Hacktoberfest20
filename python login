@@ -1,0 +1,242 @@
+import winsound
+from tkinter import *
+import time
+import tkinter.messagebox as tkMessagebox
+
+root = Tk()
+root.geometry("355x350")
+root.title("Login")
+AfterSubN = StringVar()
+AfterSubA = StringVar()
+AfterSubP = StringVar()
+global Vr1
+Vr1 = StringVar()
+
+def band():
+    BillScreen.destroy()
+def billWindow():
+    global BillScreen
+    BillUniqueId = StringVar()
+    BillScreen = Toplevel()
+    BillScreen.title("Make Bill")
+    BillScreen.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))
+    BillScreen.resizable(0, 0)
+
+    title = Label(BillScreen, text="Online billing system", font=("times new roman", 30, "bold"), bd=7, pady=3,
+                  bg="blue", fg="white", relief=SUNKEN).pack(fill=X)
+    frame1 = LabelFrame(BillScreen, bd=10, relief=SUNKEN, font=("times new roman", 15, "bold"),
+                        bg="blue")
+    frame1.place(x=0, y=80, relwidth=1)
+    customerlabel = Label(frame1, text="Customer Name", font=("times new roman", 15, "bold"), bg="blue",
+                          fg="white").grid(row=0, column=0, padx=15, pady=5)
+    customername = Entry(frame1, width=15, font="arial 15", relief=SUNKEN, bd=7).grid(row=0, column=1, pady=5, padx=10)
+    customernumber = Label(frame1, text="Customer Number", font=("times new roman", 15, "bold"), bg="blue",
+                           fg="white").grid(row=0, column=3, padx=15, pady=5)
+    customer_name = Entry(frame1, width=15, font="arial 15", relief=SUNKEN, bd=7).grid(row=0, column=4, pady=5, padx=10)
+    customerbillno = Label(frame1, text="Bill No", font=("times new roman", 15, "bold"), bg="blue", fg="white").grid(
+        row=0, column=5, padx=15, pady=5)
+    customer_billno = Entry(frame1, width=15, font="arial 15", relief=SUNKEN, bd=7).grid(row=0, column=6, pady=5,
+                                                                                         padx=10)
+    btn = Button(frame1, text="Enter", width=10, bd=7, font="arial 12 bold ").grid(row=0, column=7, padx=10)
+    btn = Button(frame1, text="Logout", width=10, bd=7, font="arial 12 bold ", command=band).grid(row=0, column=8,
+                                                                                                  padx=10)
+
+    # cosmetic section
+    frame2 = LabelFrame(BillScreen, bd=10, relief=GROOVE, text="Cosmetics", font=("times new roman", 15, "bold"),
+                        bg="blue")
+    frame2.place(x=5, y=170, width=325, height=380)
+    bathlabel = Label(frame2, text="Soap", font=("ti,es new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(row=0,
+                                                                                                                  column=0,
+                                                                                                                  padx=5,
+                                                                                                                  pady=5,
+                                                                                                                  sticky="w")
+    bath_label = Entry(frame2, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=0, column=1, padx=10,
+                                                                                         pady=5)
+    facecream = Label(frame2, text="Face Cream", font=("ti,es new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(
+        row=1, column=0, padx=5, pady=5, sticky="w")
+    face_cream = Entry(frame2, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=1, column=1, padx=10,
+                                                                                         pady=5)
+    facewash = Label(frame2, text="Facewash", font=("ti,es new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(
+        row=2, column=0, padx=5, pady=5, sticky="w")
+    face_wash = Entry(frame2, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=2, column=1, padx=10,
+                                                                                        pady=5)
+    bathlabel = Label(frame2, text="Soap", font=("times new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(row=3,
+                                                                                                                  column=0,
+                                                                                                                  padx=5,
+                                                                                                                  pady=5,
+                                                                                                                  sticky="w")
+    bath_label = Entry(frame2, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=3, column=1, padx=10,
+                                                                                         pady=5)
+    hairgel = Label(frame2, text="Hairgel", font=("ti,es new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(
+        row=4, column=0, padx=5, pady=5, sticky="w")
+    hair_gel = Entry(frame2, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=4, column=1, padx=10, pady=5)
+    bodylotion = Label(frame2, text="Bodylotion", font=("ti,es new roman", 15, "bold"), bg="blue",
+                       fg="lightgreen").grid(row=5, column=0, padx=5, pady=5, sticky="w")
+    hair_gel = Entry(frame2, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=5, column=1, padx=10, pady=5)
+    # colddrinks section
+    frame2 = LabelFrame(BillScreen, bd=10, relief=GROOVE, text="Cosmetics", font=("times new roman", 15, "bold"),
+                        bg="blue")
+    frame2.place(x=5, y=170, width=325, height=380)
+    bathlabel = Label(frame2, text="Soap", font=("ti,es new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(row=0,
+                                                                                                                  column=0,
+                                                                                                                  padx=5,
+                                                                                                                  pady=5,
+                                                                                                                  sticky="w")
+    bath_label = Entry(frame2, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=0, column=1, padx=10,
+                                                                                         pady=5)
+    facecream = Label(frame2, text="Face Cream", font=("times new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(
+        row=1, column=0, padx=5, pady=5, sticky="w")
+    face_cream = Entry(frame2, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=1, column=1, padx=10,
+                                                                                         pady=5)
+    facewash = Label(frame2, text="Facewash", font=("times new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(
+        row=2, column=0, padx=5, pady=5, sticky="w")
+    face_wash = Entry(frame2, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=2, column=1, padx=10,
+                                                                                        pady=5)
+    bathlabel = Label(frame2, text="Soap", font=("times new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(row=3,
+                                                                                                                  column=0,
+                                                                                                                  padx=5,
+                                                                                                                  pady=5,
+                                                                                                                  sticky="w")
+    bath_label = Entry(frame2, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=3, column=1, padx=10,
+                                                                                         pady=5)
+    hairgel = Label(frame2, text="Hairgel", font=("times new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(
+        row=4, column=0, padx=5, pady=5, sticky="w")
+    hair_gel = Entry(frame2, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=4, column=1, padx=10, pady=5)
+    bodylotion = Label(frame2, text="Bodylotion", font=("times new roman", 15, "bold"), bg="blue",
+                       fg="lightgreen").grid(row=5, column=0, padx=5, pady=5, sticky="w")
+    hair_gel = Entry(frame2, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=5, column=1, padx=10, pady=5)
+    #   colddrink part
+    frame3 = LabelFrame(BillScreen, bd=10, relief=GROOVE, text="Cold Drink", font=("times new roman", 15, "bold"),
+                        bg="blue")
+    frame3.place(x=340, y=170, width=325, height=380)
+    frooti = Label(frame3, text="Frooti", font=("times new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(row=0,
+                                                                                                                 column=0,
+                                                                                                                 padx=5,
+                                                                                                                 pady=5,
+                                                                                                                 sticky="w")
+    frooti_label = Entry(frame3, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=0, column=1, padx=10,
+                                                                                           pady=5)
+    pepsi = Label(frame3, text="Pepsi", font=("times new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(row=1,
+                                                                                                               column=0,
+                                                                                                               padx=5,
+                                                                                                               pady=5,
+                                                                                                               sticky="w")
+    pepsi_label = Entry(frame3, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=1, column=1, padx=10,
+                                                                                          pady=5)
+    slice = Label(frame3, text="Slice", font=("times new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(row=2,
+                                                                                                               column=0,
+                                                                                                               padx=5,
+                                                                                                               pady=5,
+                                                                                                               sticky="w")
+    slice_label = Entry(frame3, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=2, column=1, padx=10,
+                                                                                          pady=5)
+    cococola = Label(frame3, text="Coco-cola", font=("times new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(
+        row=3, column=0, padx=5, pady=5, sticky="w")
+    cococola_label = Entry(frame3, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=3, column=1, padx=10,
+                                                                                             pady=5)
+    sprite = Label(frame3, text="Sprite", font=("times new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(row=4,
+                                                                                                                 column=0,
+                                                                                                                 padx=5,
+                                                                                                                 pady=5,
+                                                                                                                 sticky="w")
+    sprite_label = Entry(frame3, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=4, column=1, padx=10,
+                                                                                           pady=5)
+    limca = Label(frame3, text="Limca", font=("times new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(row=5,
+                                                                                                               column=0,
+                                                                                                               padx=5,
+                                                                                                               pady=5,
+                                                                                                               sticky="w")
+    limca_label = Entry(frame3, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=5, column=1, padx=10,
+                                                                                          pady=5)
+    # grocery items
+    frame4 = LabelFrame(BillScreen, bd=10, relief=GROOVE, text="Grocery", font=("times new roman", 15, "bold"),
+                        bg="blue")
+    frame4.place(x=680, y=170, width=325, height=380)
+    rice = Label(frame4, text="Rice", font=("times new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(row=0,
+                                                                                                             column=0,
+                                                                                                             padx=5,
+                                                                                                             pady=5,
+                                                                                                             sticky="w")
+    rice_label = Entry(frame4, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=0, column=1, padx=10,
+                                                                                         pady=5)
+    foodoil = Label(frame4, text="Food-oil", font=("times new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(
+        row=1, column=0, padx=5, pady=5, sticky="w")
+    foodoil_label = Entry(frame4, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=1, column=1, padx=10,
+                                                                                            pady=5)
+    daal = Label(frame4, text="Urad Dal", font=("times new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(row=2,
+                                                                                                                 column=0,
+                                                                                                                 padx=5,
+                                                                                                                 pady=5,
+                                                                                                                 sticky="w")
+    daal_label = Entry(frame4, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=2, column=1, padx=10,
+                                                                                         pady=5)
+    wheat = Label(frame4, text="Wheat", font=("times new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(row=3,
+                                                                                                               column=0,
+                                                                                                               padx=5,
+                                                                                                               pady=5,
+                                                                                                               sticky="w")
+    wheat_label = Entry(frame4, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=3, column=1, padx=10,
+                                                                                          pady=5)
+    sugar = Label(frame4, text="Sugar", font=("times new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(row=4,
+                                                                                                               column=0,
+                                                                                                               padx=5,
+                                                                                                               pady=5,
+                                                                                                               sticky="w")
+    sprite_label = Entry(frame4, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=4, column=1, padx=10,
+                                                                                           pady=5)
+    tea = Label(frame4, text="Tea", font=("ti,es new roman", 15, "bold"), bg="blue", fg="lightgreen").grid(row=5,
+                                                                                                           column=0,
+                                                                                                           padx=5,
+                                                                                                           pady=5,
+                                                                                                           sticky="w")
+    tea_label = Entry(frame4, width=10, font="arial 15 bold", relief=SUNKEN, bd=7).grid(row=5, column=1, padx=10,
+                                                                                        pady=5)
+    # frame for billing area
+    frame5 = LabelFrame(BillScreen, bd=10, relief=GROOVE, font=("times new roman", 15, "bold"))
+    frame5.place(x=1000, y=170, width=350, height=380)
+    billtitle = Label(frame5, text="Bill area", font="arial 15 bold", relief=GROOVE, bd=7).pack(fill="x")
+    scrolly = Scrollbar(frame5, orient=VERTICAL)
+    txtarea = Text(frame5, yscrollcommand=scrolly.set)
+    scrolly.pack(side=LEFT, fill=Y)
+    scrolly.config(command=txtarea.yview)
+    txtarea.pack()
+c = 1;
+def Submit():
+    global c;
+    if (c < 4):
+        if (AfterSubN.get() == "a" and AfterSubA.get() == "b"):
+            AfterSubN.set("")
+            AfterSubA.set("")
+
+            billWindow();
+
+        else:
+            tkMessagebox.showwarning('Warning', str(3 - c) + " attempts are remaining", icon="warning")
+            time.sleep(1)
+            winsound.PlaySound('mb.wav', winsound.SND_ALIAS)
+
+            c += 1;
+    else:
+        root.destroy()
+
+
+Heding = Label(root, text="          User Login Panel", font=('times new roman', 15), pady=20, padx=50, bd=2, relief=FLAT)
+Heding.grid(row=0, columnspan=2)
+# Name Label
+Cname = Label(root, text="\tUsername\t  ", bd=2, relief=SUNKEN)
+Cname.grid(row=1, column=0)
+# Pass Label
+Cadd = Label(root, text="\tPassword\t  ", bd=2, relief=SUNKEN)
+Cadd.grid(row=2, column=0)
+# Name Entry
+CnameE = Entry(root, width=22, textvariable=AfterSubN)
+CnameE.grid(row=1, column=1)
+# pass Entry
+CaddE = Entry(root, width=22, textvariable=AfterSubA)
+CaddE.grid(row=2, column=1)
+b1 = Button(root, text="Login", command=Submit)
+b1.grid(row=3, column=1)
+pic=PhotoImage(file="lol.PNG")
+logo=Label(image=pic)
+logo.grid()
+root.mainloop()
